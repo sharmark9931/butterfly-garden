@@ -1,8 +1,8 @@
 class ButterflyGarden < Formula
   desc "Animated butterfly garden in your terminal"
   homepage "https://github.com/sharmark9931/butterfly-garden"
-  url "https://github.com/sharmark9931/butterfly-garden/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2edc41e587cd9d157fd02570a3ae53a61ca8f9a6d698c419e2c10e7f516355c5"
+  url "https://github.com/sharmark9931/butterfly-garden/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "2e90c4adb22c5a8aa7f63efe21fa56bee409422cd9dbf7e1de24d017c4fef10d"
   license "MIT"
 
   # No compiled dependencies — uses whatever python3 is already on the system
