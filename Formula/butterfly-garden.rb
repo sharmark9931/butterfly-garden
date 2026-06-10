@@ -5,19 +5,25 @@ class ButterflyGarden < Formula
   sha256 "2edc41e587cd9d157fd02570a3ae53a61ca8f9a6d698c419e2c10e7f516355c5"
   license "MIT"
 
-  depends_on "python@3.11"
+  # No compiled dependencies — uses whatever python3 is already on the system
+  uses_from_macos "python3"
 
   def install
-    # install butterfly.py as an executable script
-    (bin/"butterfly").write <<~EOS
-      #!/bin/bash
-      exec "#{Formula["python@3.11"].opt_bin}/python3" "#{libexec}/butterfly.py" "$@"
-    EOS
     libexec.install "butterfly.py"
+
+    (bin/"butterfly").write <<~EOS
+      #!/usr/bin/env python3
+      import sys
+      sys.path.insert(0, "#{libexec}")
+      from butterfly import main_cli
+      main_cli()
+    EOS
+
+    chmod 0755, bin/"butterfly"
   end
 
   test do
-    # just verify the script is importable (curses needs a tty so we don't run it)
-    system Formula["python@3.11"].opt_bin/"python3", "-c", "import butterfly"
+    assert_predicate bin/"butterfly", :exist?
+    assert_match "main_cli", shell_output("grep main_cli #{libexec}/butterfly.py")
   end
 end
