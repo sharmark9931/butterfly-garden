@@ -1,10 +1,8 @@
 class ButterflyGarden < Formula
   desc "Animated butterfly garden in your terminal"
-  homepage "https://github.com/YOUR_GITHUB_USERNAME/butterfly-garden"
-  # UPDATE the url and sha256 after you push a release tag on GitHub:
-  #   curl -L https://github.com/YOUR_GITHUB_USERNAME/butterfly-garden/archive/refs/tags/v1.0.0.tar.gz | shasum -a 256
-  url "https://github.com/YOUR_GITHUB_USERNAME/butterfly-garden/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "REPLACE_WITH_SHA256_OF_YOUR_RELEASE_TARBALL"
+  homepage "https://github.com/sharmark9931/butterfly-garden"
+  url "https://github.com/sharmark9931/butterfly-garden/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "2edc41e587cd9d157fd02570a3ae53a61ca8f9a6d698c419e2c10e7f516355c5"
   license "MIT"
 
   depends_on "python@3.11"
